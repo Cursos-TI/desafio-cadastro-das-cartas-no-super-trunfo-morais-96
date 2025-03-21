@@ -22,7 +22,7 @@ void ler_texto(char *buffer, int length) {
 int main() {
     
     // Declaração das variáveis para armazenar dados de duas "cartas" (informações de cidades).
-    float area1, area2, pib1, pib2;
+    float area1, area2, pib1, pib2, percapita1, densidade1, densidade2, percapita2;
     char codigo1[4], codigo2[4], cidade1[50], cidade2[50];
     int populacao1, populacao2, pontos1, pontos2;
     char estado1, estado2;
@@ -54,11 +54,14 @@ int main() {
     scanf(" %f", &area1);
     
     printf("PIB: ");
-    scanf("%f", &pib1);
+    scanf(" %f", &pib1);
     
     printf("Número de Pontos Turísticos: ");
     scanf("%d", &pontos1);
     printf("\n");
+
+    densidade1 = populacao1 / area1;
+    percapita1 = pib1 / populacao1;
  
     // Leitura dos dados para a Carta 2:
     printf("Carta 2:\n");
@@ -82,11 +85,14 @@ int main() {
     scanf(" %f", &area2);
     
     printf("PIB: ");
-    scanf("%f", &pib2);
+    scanf(" %f", &pib2);
     
     printf("Número de Pontos Turísticos: ");
     scanf("%d", &pontos2);
     printf("\n");
+
+    densidade2 = populacao2 / area2;
+    percapita2 = pib2 / populacao2;
  
     // Exibição dos dados da Carta 1:
     printf("Carta 1:\n");
@@ -97,6 +103,8 @@ int main() {
     printf("Área: %f\n", area1);
     printf("PIB: %f\n", pib1);
     printf("Número de Pontos Turísticos: %d\n", pontos1);
+    printf("Densidade Populacional: %f\n", densidade1);
+    printf("PIB per Capita: %f\n", percapita1);
     printf("\n\n");
     
     // Exibição dos dados da Carta 2:
@@ -108,6 +116,8 @@ int main() {
     printf("Área: %f\n", area2);
     printf("PIB: %f\n", pib2);
     printf("Número de Pontos Turísticos: %d\n", pontos2);
+    printf("Densidade Populacional: %f\n", densidade2);
+    printf("PIB per Capita: %f\n", percapita2);
  
     return 0;
 }
